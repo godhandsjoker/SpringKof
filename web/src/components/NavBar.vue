@@ -1,8 +1,8 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <router-link class="navbar-brand" :to="{name: 'home'}">King Of Bots</router-link>
-            <div class="collapse navbar-collapse" id="navbarText">
+            <router-link :to="{name: 'home'}" class="navbar-brand">King Of Bots</router-link>
+            <div id="navbarText" class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <router-link :class="route_name === 'pk_index' ? 'nav-link active' : 'nav-link'"
@@ -20,16 +20,16 @@
                         </router-link>
                     </li>
                 </ul>
-                <ul class="navbar-nav" v-if="$store.state.user.is_login">
+                <ul v-if="$store.state.user.is_login" class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                        <a id="navbarDropdown" aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                           href="#" role="button">
                             {{ $store.state.user.username }}
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
                             <li>
 
-                                <router-link class="dropdown-item" :to="{name: 'user_bot_index'}">我的Bot</router-link>
+                                <router-link :to="{name: 'user_bot_index'}" class="dropdown-item">我的Bot</router-link>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -38,14 +38,14 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav" v-else-if="!$store.state.user.pulling_info">
+                <ul v-else-if="!$store.state.user.pulling_info" class="navbar-nav">
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'user_account_login' }" role="button">
+                        <router-link :to="{name: 'user_account_login' }" class="nav-link" role="button">
                             登录
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'user_account_register'}" role="button">
+                        <router-link :to="{name: 'user_account_register'}" class="nav-link" role="button">
                             注册
                         </router-link>
                     </li>
